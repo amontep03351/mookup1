@@ -1,0 +1,793 @@
+/* Default styles for all devices */
+body {
+    height: 99.91%;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    font-family: "Prompt", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: #ccc; 
+}
+ 
+
+
+/* (2) ==== แก้บางอย่าง ใหม้ือถือรุ่นเก่า จอสั้นๆ iPhone 5/6/7/8/SE === 1px=0.2656vm =, 1em=3.766vw */
+@media screen and ( min-device-aspect-ratio:1/2 ) and ( max-width: 500px ){
+
+    html, body {
+        height: 99.91%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        font-family: "Prompt", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        color: #ccc;
+    }
+    .div-googlemap, .div-listservice {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+    }
+    .div-googlemap {
+        background-color: #3498db; /* สีพื้นหลังของ header */
+    }
+    .div-listservice {
+        background-color: #ffffff; /* สีพื้นหลังของ footer */
+    }
+    .div-map{
+       width: 100%;
+       height: 100%;
+       display: flex;
+    }
+    .div-cardservice{
+        width: 100%;
+        height: 100%;
+        display: flex; 
+     }
+    .serv-card {   
+        display: flex;
+        flex-direction: column;  
+        overflow: hidden; 
+        width: 100%;
+        border: 0px solid #ccc; 
+        margin: 0px auto;
+    }
+    .serv-card-header{
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        background-color: #ffffff;
+        padding: 10px; 
+    }
+    .serv-card-header-left{
+        text-align: left;
+        padding-left: 5px;
+        font-weight: bold;
+        font-size: 18px;
+        color: #000000;
+    }
+    .serv-card-header-right{
+        text-align: right;
+        padding-right: 5px;
+    }
+    .serv-card-footer{
+        background-color: #f8f8f8;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        border-top: 0px solid #ddd;
+    }
+    .serv-card-body {
+        height: 100vh;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: #fff;
+        flex-direction: row;
+        text-align: center;
+        overflow-y:auto;
+        overflow-x:hidden;
+        flex-grow: 0; /* ให้ card-body ใช้พื้นที่ที่เหลืออยู่ */
+        scroll-behavior: smooth;
+    }
+    .serv-card-item {
+        margin: 3px 0;
+        height: 20vw;
+        padding-top: 20px; 
+        padding-bottom: 20px; 
+        display: grid; 
+        grid-template-columns: 30% 70%; 
+        border-bottom: 0.70vw dotted #CCC;
+    }
+    .serv-card-img{
+        position: relative; 
+    }
+    .serv-card-item-img{
+        display: block; 
+        height: auto;
+        width:22vw;
+        border-radius: 8px;
+        max-width: 100px; 
+        max-height: 100px; 
+    }
+    .serv-card-item-img-star {
+        position: absolute; 
+        bottom: 0; /* วางที่มุมล่าง */
+        right: 0; /* วางที่มุมขวา */ 
+        width: 40px; /* ขนาดของรูปภาพที่ซ้อนทับ */
+        height: auto;
+    }
+    .serv-card-item-img-star-text { 
+        position: absolute;
+        bottom: 5px; /* ห่างจากมุมล่าง 10px */
+        right: 10px; /* ห่างจากมุมขวา 10px */
+        color: #000000; /* สีของข้อความ */ 
+        padding: px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem; 
+        font-weight: bold;
+    }
+    .serv-card-item-info{
+        display: grid; 
+        grid-template-columns: 50% 50%; 
+        grid-template-rows: 40% 30%;
+        text-align: left; 
+        color: #6b6868;
+        font-weight: 400; 
+    }  
+    .serv-card-footer{
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        background-color: #ffffff; 
+        color: #363434;
+        padding-left: 30px;
+        font-size: 12px;
+        text-align: left;
+    }
+    .serv-card-footer-text1{
+        display: grid; 
+        grid-template-rows: 0.1fr 0.1fr; 
+    }
+    .serv-card-footer-text2{
+        display: grid; 
+        grid-template-rows: 0.1fr 0.1fr; 
+    }
+    .serv-card-footer-text3{
+        padding-top: 10px;  
+        text-align: center;
+        color: #ffffff;
+    }
+    .serv-card-footer-texth2{
+        font-size: 20px;
+        color: #1a00c6;
+    }
+    .serv-card-item-texth2img{
+        width:16vw; 
+        border:1px #000000;
+    }
+    .serv-card-item-btn {
+        display: inline-block;
+        padding: 0px 15px;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .serv-card-itembtn-primary{
+        color: #fff;
+        background-color: #f64d4d;
+        box-shadow: 0 4px 8px rgba(22, 22, 22, 0.2);
+        transform: scale(1.05);
+    }
+}
+/* (3) ==== iPad+Tablet แนวตั้ง (Tablet บางรุ่นจอยาวใช้แบบข้อ 1) = iPad Mini = 1px=0.13vw, 1em=1.825vw== */
+@media screen and ( min-aspect-ratio:768/1024 ){
+
+    html, body {
+        height: 99.91%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        font-family: "Prompt", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        color: #ccc;
+    }
+    .div-googlemap, .div-listservice {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+    }
+    .div-googlemap {
+        background-color: #3498db; /* สีพื้นหลังของ header */
+    }
+    .div-listservice {
+        background-color: #ffffff; /* สีพื้นหลังของ footer */
+    }
+    .div-map{
+       width: 100%;
+       height: 100%;
+       display: flex;
+    }
+    .div-cardservice{
+        width: 100%;
+        height: 100%;
+        display: flex; 
+     }
+    .serv-card {   
+        display: flex;
+        flex-direction: column;  
+        overflow: hidden; 
+        width: 100%;
+        border: 0px solid #ccc; 
+        margin: 0px auto;
+    }
+    .serv-card-header{
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        background-color: #ffffff;
+        padding: 10px; 
+    }
+    .serv-card-header-left{
+        text-align: left;
+        padding-left: 5px;
+        font-weight: bold;
+        font-size: 18px;
+        color: #000000;
+    }
+    .serv-card-header-right{
+        text-align: right;
+        padding-right: 5px;
+    }
+    .serv-card-footer{
+        background-color: #f8f8f8;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        border-top: 0px solid #ddd;
+    }
+    .serv-card-body {
+        height: 100vh;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: #fff;
+        flex-direction: row;
+        text-align: center;
+        overflow-y:auto;
+        overflow-x:hidden;
+        flex-grow: 0; /* ให้ card-body ใช้พื้นที่ที่เหลืออยู่ */
+        scroll-behavior: smooth;
+    }
+    .serv-card-item {
+        margin: 3px 0;
+        height: 20vw;
+        padding-top: 20px; 
+        padding-bottom: 20px; 
+        display: grid; 
+        grid-template-columns: 30% 70%; 
+        border-bottom: 0.70vw dotted #CCC;
+    }
+    .serv-card-img{
+        position: relative; 
+    }
+    .serv-card-item-img{
+        display: block; 
+        height: auto;
+        width:22vw;
+        border-radius: 8px;
+        max-width: 100px; 
+        max-height: 100px; 
+    }
+    .serv-card-item-img-star {
+        position: absolute; 
+        bottom: 0; /* วางที่มุมล่าง */
+        right: 0; /* วางที่มุมขวา */ 
+        width: 40px; /* ขนาดของรูปภาพที่ซ้อนทับ */
+        height: auto;
+    }
+    .serv-card-item-img-star-text { 
+        position: absolute;
+        bottom: 5px; /* ห่างจากมุมล่าง 10px */
+        right: 10px; /* ห่างจากมุมขวา 10px */
+        color: #000000; /* สีของข้อความ */ 
+        padding: px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem; 
+        font-weight: bold;
+    }
+    .serv-card-item-info{
+        display: grid; 
+        grid-template-columns: 50% 50%; 
+        grid-template-rows: 40% 30%;
+        text-align: left; 
+        color: #6b6868;
+        font-weight: 400; 
+    }  
+    .serv-card-footer{
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        background-color: #ffffff; 
+        color: #363434;
+        padding-left: 30px;
+        font-size: 12px;
+        text-align: left;
+    }
+    .serv-card-footer-text1{
+        display: grid; 
+        grid-template-rows: 0.1fr 0.1fr; 
+    }
+    .serv-card-footer-text2{
+        display: grid; 
+        grid-template-rows: 0.1fr 0.1fr; 
+    }
+    .serv-card-footer-text3{
+        padding-top: 10px;  
+        text-align: center;
+        color: #ffffff;
+    }
+    .serv-card-footer-texth2{
+        font-size: 20px;
+        color: #1a00c6;
+    }
+    .serv-card-item-texth2img{
+        width:16vw; 
+        border:1px #000000;
+    }
+    .serv-card-item-btn {
+        display: inline-block;
+        padding: 0px 15px;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .serv-card-itembtn-primary{
+        color: #fff;
+        background-color: #f64d4d;
+        box-shadow: 0 4px 8px rgba(22, 22, 22, 0.2);
+        transform: scale(1.05);
+    }
+}
+/* (4) ============ มือถือ Flip จอจัตุรัส = 800 x 800 ======== 1px = 0.12497vw, 1em=1.75vw === */
+@media screen and ( min-aspect-ratio:1/1 ){
+
+    html, body {
+        height: 99.91%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        font-family: "Prompt", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        color: #ccc;
+    }
+    .div-googlemap, .div-listservice {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+    }
+    .div-googlemap {
+        background-color: #3498db; /* สีพื้นหลังของ header */
+    }
+    .div-listservice {
+        background-color: #ffffff; /* สีพื้นหลังของ footer */
+    }
+    .div-map{
+       width: 100%;
+       height: 100%;
+       display: flex;
+    }
+    .div-cardservice{
+        width: 100%;
+        height: 100%;
+        display: flex; 
+     }
+    .serv-card {   
+        display: flex;
+        flex-direction: column;  
+        overflow: hidden; 
+        width: 100%;
+        border: 0px solid #ccc; 
+        margin: 0px auto;
+    }
+    .serv-card-header{
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        background-color: #ffffff;
+        padding: 10px; 
+    }
+    .serv-card-header-left{
+        text-align: left;
+        padding-left: 5px;
+        font-weight: bold;
+        font-size: 18px;
+        color: #000000;
+    }
+    .serv-card-header-right{
+        text-align: right;
+        padding-right: 5px;
+    }
+    .serv-card-footer{
+        background-color: #f8f8f8;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        border-top: 0px solid #ddd;
+    }
+    .serv-card-body {
+        height: 100vh;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: #fff;
+        flex-direction: row;
+        text-align: center;
+        overflow-y:auto;
+        overflow-x:hidden;
+        flex-grow: 0; /* ให้ card-body ใช้พื้นที่ที่เหลืออยู่ */
+        scroll-behavior: smooth;
+    }
+    .serv-card-item {
+        margin: 3px 0;
+        height: 20vw;
+        padding-top: 20px; 
+        padding-bottom: 20px; 
+        display: grid; 
+        grid-template-columns: 30% 70%; 
+        border-bottom: 0.70vw dotted #CCC;
+    }
+    .serv-card-img{
+        position: relative; 
+    }
+    .serv-card-item-img{
+        display: block; 
+        height: auto;
+        width:22vw;
+        border-radius: 8px;
+        max-width: 100px; 
+        max-height: 100px; 
+    }
+    .serv-card-item-img-star {
+        position: absolute; 
+        bottom: 0; /* วางที่มุมล่าง */
+        right: 0; /* วางที่มุมขวา */ 
+        width: 40px; /* ขนาดของรูปภาพที่ซ้อนทับ */
+        height: auto;
+    }
+    .serv-card-item-img-star-text { 
+        position: absolute;
+        bottom: 5px; /* ห่างจากมุมล่าง 10px */
+        right: 10px; /* ห่างจากมุมขวา 10px */
+        color: #000000; /* สีของข้อความ */ 
+        padding: px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem; 
+        font-weight: bold;
+    }
+    .serv-card-item-info{
+        display: grid; 
+        grid-template-columns: 50% 50%; 
+        grid-template-rows: 40% 30%;
+        text-align: left; 
+        color: #6b6868;
+        font-weight: 400; 
+    }  
+    .serv-card-footer{
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        background-color: #ffffff; 
+        color: #363434;
+        padding-left: 30px;
+        font-size: 12px;
+        text-align: left;
+    }
+    .serv-card-footer-text1{
+        display: grid; 
+        grid-template-rows: 0.1fr 0.1fr; 
+    }
+    .serv-card-footer-text2{
+        display: grid; 
+        grid-template-rows: 0.1fr 0.1fr; 
+    }
+    .serv-card-footer-text3{
+        padding-top: 10px;  
+        text-align: center;
+        color: #ffffff;
+    }
+    .serv-card-footer-texth2{
+        font-size: 20px;
+        color: #1a00c6;
+    }
+    .serv-card-item-texth2img{
+        width:16vw; 
+        border:1px #000000;
+    }
+    .serv-card-item-btn {
+        display: inline-block;
+        padding: 0px 15px;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .serv-card-itembtn-primary{
+        color: #fff;
+        background-color: #f64d4d;
+        box-shadow: 0 4px 8px rgba(22, 22, 22, 0.2);
+        transform: scale(1.05);
+    }
+}
+ 
+/* (5) ===== Macbook & Surface & iPad แนวนอน (กลุ่มจอ 4:3) = 1696 x 965 px == 1px=0.05883vw, 1em=0.82vw == */
+@media screen and ( min-aspect-ratio:4/3 ) {
+
+    html, body {
+        height: 99.91%; 
+        display: flex;
+        flex-direction: column; 
+    } 
+}
+/* (6) =============== Notebook จอ 16:9 = 1366 x 640 px === 1px=0.07333vw, 1em=1.016666vw =========== */
+@media screen and ( min-aspect-ratio:2/1 ) {
+
+    html, body {
+        height: 99.91%; 
+        display: flex;
+        flex-direction: column; 
+    } 
+}
+/* (7) ========== จอ Full HD จอ 16:9 แต่ใหญ่ขึ้น = 1920 x 900 px == 1px=0.05133vw, 1em=0.725vw ======== */
+@media screen and ( min-aspect-ratio:2/1 ) and (min-width: 1600px){
+
+    html, body {
+        height: 99.91%; 
+        display: flex;
+        flex-direction: column; 
+    } 
+}
+/* Mobile devices (up to 600px) */
+@media screen and (max-width: 600px) {
+    html, body {
+        height: 99.91%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        font-family: "Prompt", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        color: #ccc;
+    }
+    .div-googlemap, .div-listservice {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+    }
+    .div-googlemap {
+        background-color: #3498db; /* สีพื้นหลังของ header */
+    }
+    .div-listservice {
+        background-color: #ffffff; /* สีพื้นหลังของ footer */
+    }
+    .div-map{
+       width: 100%;
+       height: 100%;
+       display: flex;
+    }
+    .div-cardservice{
+        width: 100%;
+        height: 100%;
+        display: flex; 
+     }
+    .serv-card {   
+        display: flex;
+        flex-direction: column;  
+        overflow: hidden; 
+        width: 100%;
+        border: 0px solid #ccc; 
+        margin: 0px auto;
+    }
+    .serv-card-header{
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        background-color: #ffffff;
+        padding: 10px; 
+    }
+    .serv-card-header-left{
+        text-align: left;
+        padding-left: 5px;
+        font-weight: bold;
+        font-size: 18px;
+        color: #000000;
+    }
+    .serv-card-header-right{
+        text-align: right;
+        padding-right: 5px;
+    }
+    .serv-card-footer{
+        background-color: #f8f8f8;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        border-top: 0px solid #ddd;
+    }
+    .serv-card-body {
+        height: 100vh;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: #fff;
+        flex-direction: row;
+        text-align: center;
+        overflow-y:auto;
+        overflow-x:hidden;
+        flex-grow: 0; /* ให้ card-body ใช้พื้นที่ที่เหลืออยู่ */
+        scroll-behavior: smooth;
+    }
+    .serv-card-item {
+        margin: 3px 0;
+        height: 20vw;
+        padding-top: 20px; 
+        padding-bottom: 20px; 
+        display: grid; 
+        grid-template-columns: 30% 70%; 
+        border-bottom: 0.70vw dotted #CCC;
+    }
+    .serv-card-img{
+        position: relative; 
+    }
+    .serv-card-item-img{
+        display: block; 
+        height: auto;
+        width:22vw;
+        border-radius: 8px;
+        max-width: 100px; 
+        max-height: 100px; 
+    }
+    .serv-card-item-img-star {
+        position: absolute; 
+        bottom: 0; /* วางที่มุมล่าง */
+        right: 0; /* วางที่มุมขวา */ 
+        width: 40px; /* ขนาดของรูปภาพที่ซ้อนทับ */
+        height: auto;
+    }
+    .serv-card-item-img-star-text { 
+        position: absolute;
+        bottom: 5px; /* ห่างจากมุมล่าง 10px */
+        right: 10px; /* ห่างจากมุมขวา 10px */
+        color: #000000; /* สีของข้อความ */ 
+        padding: px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem; 
+        font-weight: bold;
+    }
+    .serv-card-item-info{
+        display: grid; 
+        grid-template-columns: 50% 50%; 
+        grid-template-rows: 40% 30%;
+        text-align: left; 
+        color: #6b6868;
+        font-weight: 200; 
+    }  
+    .serv-card-footer{
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        background-color: #ffffff; 
+        color: #363434;
+        padding-left: 30px;
+        font-size: 12px;
+        text-align: left;
+    }
+    .serv-card-footer-text1{
+        display: grid; 
+        grid-template-rows: 0.1fr 0.1fr; 
+    }
+    .serv-card-footer-text2{
+        display: grid; 
+        grid-template-rows: 0.1fr 0.1fr; 
+    }
+    .serv-card-footer-text3{
+        padding-top: 10px;  
+        text-align: center;
+        color: #ffffff;
+    }
+    .serv-card-footer-texth2{
+        font-size: 20px;
+        color: #1a00c6;
+    }
+    .serv-card-item-texth2img{
+        width:16vw; 
+        border:1px #000000;
+    }
+    .serv-card-item-btn {
+        display: inline-block;
+        padding: 0px 15px;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .serv-card-itembtn-primary{
+        color: #fff;
+        background-color: #f64d4d;
+        box-shadow: 0 4px 8px rgba(22, 22, 22, 0.2);
+        transform: scale(1.05);
+    }
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .radio-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    .radio-container input {
+        display: none;
+    }
+    
+    .radio-checkmark {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 1px solid #414141;
+        background-color: #fff;
+        margin-right: 10px;
+        position: relative;
+    }
+    
+    .radio-container input:checked + .radio-checkmark {
+        background-color: #55ff00;
+        border-color: #55ff00;
+    }
+    
+    .radio-container input:checked + .radio-checkmark::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        background-color: #55ff00;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+     
+}
+
+ 
